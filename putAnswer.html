@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Put Answer</title>
+    
+</head>
+<body>
+  
+    <p>What is 3 + 4?</p>
+    <input type="number" id="userAnswer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Check Answer</button>
+
+
+
+
+    <script>
+        function checkAnswer() {
+           
+            let userAnswer = parseInt(document.getElementById("userAnswer").value);
+           
+           
+            if (userAnswer === (3 + 4)) {
+            
+                alert("Correct");
+            } else {
+   
+                alert("Incorrect");
+            }
+          
+        }
+    </script>
+</body>
+</html>

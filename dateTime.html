@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Display</title>
+    
+</head>
+<body>
+    <div id="datetime"></div>
+
+    <script>
+        function updateDateTime() {
+        let now = new Date();
+        let date = now.toLocaleDateString();
+        let time = now.toLocaleTimeString();
+
+        document.getElementById('datetime').innerHTML = date + ' ' + time;
+        }
+       
+        updateDateTime();
+    </script>
+</body>
+</html>

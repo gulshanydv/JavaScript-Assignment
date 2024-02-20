@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+</head>
+<body>
+    <h1>User Details</h1>
+
+    <label for="name">Enter Name :</label><br>
+    <input type="text" name="" id="name"><br><br>
+
+    <label for="mail">Enter Mail</label><br>
+    <input type="email" name="" id="mail"><br><br>
+    
+    <button class="submitDetails" onclick="addUser()">Submit</button><br><br>
+
+    <table class="userInfo">
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Action</th>
+        </tr>
+    </table>
+
+    <script>
+       
+        function addUser(){
+
+            let names = document.querySelector("#name").value
+            let mails = document.querySelector("#mail").value
+            let table = document.querySelector(".userInfo")
+            let row = table.insertRow(-1)
+            let col1 = row.insertCell(0)
+            let col2 = row.insertCell(1)
+            let col3 = row.insertCell(2)
+
+            col1.innerHTML = names;
+            col2.innerHTML = mails;
+            col3.innerHTML = "<button onclick='deleteUser(this)'>Delete</button>"
+        }
+        function deleteUser(btn){
+            let row = btn.parentNode.parentNode
+            row.parentNode.removeChild(row)
+        }
+       
+    </script>
+
+</body>
+</html>

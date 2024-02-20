@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Names</title>
+</head>
+<body>
+    <script>
+        let names = []; 
+       
+        let stopDialog = false;
+        do{
+                let name = prompt("Enter a name:");
+                if (name !== null) {
+                    names.push(name);
+                } else {
+                    stopDialog = confirm("Do you want to stop further dialogs?");
+                }
+            }while(!stopDialog);
+            
+        names.sort();
+        alert("Names in alphabetical order:\n" + names.join("\n"));
+        
+    </script>
+</body>
+</html>

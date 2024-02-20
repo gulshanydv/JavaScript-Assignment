@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Display in UTC format</title>
+    
+</head>
+<body>
+    <div id="datetime"></div>
+    <div id="utc-time"></div>
+
+    <script>
+        function updateDateTime() {
+            let now = new Date();
+            let date = now.toDateString();
+            let time = now.toLocaleTimeString();
+            let utcTime = now.toUTCString();
+
+            document.getElementById('datetime').innerHTML = "Date and Time:" +date + ' ' + time;
+            document.getElementById('utc-time').innerHTML = "UTC Time: " + utcTime;
+        }
+        updateDateTime();
+    </script>
+</body>
+</html>

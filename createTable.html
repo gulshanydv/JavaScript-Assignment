@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Table</title>
+</head>
+<body>
+    <h1>Table Data</h1>
+
+    <label for="rows">Rows : </label>
+    <input type="text" name="rows" id="rows"><br><br>
+
+    <label for="columns">Columns : </label>
+    <input type="text" name="columns" id="columns"><br><br>
+
+    <button id="btn">Create Table</button>
+
+    <div class="element"></div>
+
+    <script>
+        function createTable(){
+            let rows = parseInt(document.querySelector("#rows").value)
+            let cols = parseInt(document.querySelector("#columns").value)
+
+            let tableData = "<table border='1'>";
+                for(let i = 1; i<=rows; i++){
+                    tableData += "<tr>"
+                        for(let j = 1; j<= cols; j++){
+                            tableData += "<td>"+"box"+"</td>"
+                        }
+                }
+            tableData += "</table>"
+            document.querySelector(".element").innerHTML = tableData;
+        }
+
+        document.querySelector("#btn").addEventListener("click",createTable);
+    </script>
+
+
+</body>
+</html>
